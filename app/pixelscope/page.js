@@ -38,7 +38,7 @@ export default function PixelScopePage() {
     <div className={styles.psPage}>
       <PixelScopeHeader
         title="PixelScope"
-        subtitle="An iPhone-based display analysis platform from Precision Broadcast Engineering. PixelScope coordinates controlled test patterns, camera-based acquisition, optical tracking, and structured reporting so a display inspection becomes documented engineering evidence."
+        subtitle="An iPhone-based display analysis platform from Precision Broadcast Engineering. PixelScope coordinates controlled test patterns, camera-based acquisition, optical tracking, and structured reporting so a display inspection becomes documented engineering evidence for review."
       />
       <div className={styles.psArticle}>
         <section className={styles.psSection} aria-labelledby="about">
