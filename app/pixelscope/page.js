@@ -4,7 +4,7 @@ import styles from "./pixelscope.module.css";
 
 const canonicalUrl = "https://pbe-engineering.com/pixelscope";
 const description =
-  "Discover PixelScope, Precision Broadcast Engineering's iPhone-based display analysis platform combining controlled 4K test patterns, optical tracking, structured measurements, professional reporting, and AI-assisted reference intelligence.";
+  "Discover PixelScope, Precision Broadcast Engineering's iPhone-based display analysis platform combining controlled 4K test patterns, optical tracking, structured measurements, professional reporting, and a planned AI Reference Intelligence layer.";
 
 export const metadata = {
   title: "PixelScope | Display Analysis & Support | PBE",
