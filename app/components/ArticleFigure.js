@@ -7,6 +7,7 @@ export default function ArticleFigure({
   figure,
   priority = false,
   classNames,
+  id,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const dialogTitleId = useId();
@@ -33,7 +34,7 @@ export default function ArticleFigure({
 
   return (
     <>
-      <figure className={classNames.figure}>
+      <figure className={classNames.figure} id={id}>
         <button
           type="button"
           className={classNames.imageButton}

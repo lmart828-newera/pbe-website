@@ -1,0 +1,285 @@
+/* PixelScope-only CSS module. Named pixelscope.module.css (not page.module.css)
+   so Next.js does not bind it to a single route segment. Class names are
+   prefixed like the EBU engineering note (ebuPage / ebuHero / ebuArticle). */
+.psPage {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(0, 207, 255, 0.16), transparent 30rem),
+    linear-gradient(180deg, #030812 0%, #07111f 42%, #030812 100%);
+  color: #ffffff;
+}
+
+.psHero {
+  padding: 76px 48px 54px;
+  border-bottom: 1px solid rgba(0, 207, 255, 0.16);
+}
+
+.psHeroInner {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.psHero h1 {
+  max-width: 920px;
+  font-size: clamp(2.55rem, 4.25vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 900;
+  overflow-wrap: break-word;
+}
+
+.psSubtitle, .psSection p, .psSection li, .psMeta {
+  color: #d5dce8;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.psSubtitle { margin-top: 24px; max-width: 760px; }
+.psMeta { margin-top: 18px; font-size: 0.98rem; color: rgba(213, 220, 232, 0.78); }
+.psActions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+.psArticle { width: min(1120px, calc(100% - 96px)); max-width: 100%; min-width: 0; margin: 0 auto; padding: 56px 0 88px; }
+.psSection { padding: 44px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); scroll-margin-top: 150px; }
+.psSection:first-child { padding-top: 0; }
+.psSection h2 { max-width: 820px; margin-bottom: 18px; font-size: clamp(2rem, 4.2vw, 4rem); line-height: 1.05; letter-spacing: -0.035em; font-weight: 900; }
+.psSection h3 { max-width: 760px; margin: 28px 0 12px; color: #00cfff; font-size: 1.35rem; line-height: 1.25; font-weight: 800; }
+.psSection p + p, .psSection ul, .psSection ol { margin-top: 18px; }
+.psSection ul, .psSection ol { display: grid; gap: 8px; margin-left: 1.2rem; }
+.psSection li::marker { color: #00cfff; }
+.psSection p a, .psSection li a { color: #00cfff; text-decoration: underline; text-underline-offset: 3px; }
+.psSection p a:hover, .psSection li a:hover { color: #ffffff; }
+.psSection a:focus-visible { outline: 2px solid #00cfff; outline-offset: 4px; }
+
+.psCodeFigure { min-width: 0; max-width: 100%; margin: 28px 0; }
+.psTableWrap:focus-visible, .psEditor:focus-visible { outline: 2px solid #00cfff; outline-offset: 4px; }
+
+/* GEN-B SWEEP editor chrome; token colors sampled from the SWEEP Swift PNGs. */
+.psEditor {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 18px 22px 20px;
+  border: 1px solid #315c88;
+  border-radius: 18px;
+  background: #0b121f;
+  overflow-x: auto;
+}
+.psEditorBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.psTraffic {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 7px;
+}
+.psTrafficRed, .psTrafficYellow, .psTrafficGreen {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.psTrafficRed { background: #ff5f56; }
+.psTrafficYellow { background: #ffbd2e; }
+.psTrafficGreen { background: #27c93f; }
+.psEditorPath {
+  color: #9bafc3;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.psEditorBody {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  tab-size: 4;
+}
+.psEditorSource { display: block; width: max-content; min-width: 100%; }
+.psCodeLine { display: flex; align-items: flex-start; gap: 18px; min-height: 1.7em; }
+.psCodeLineNo {
+  flex: 0 0 auto;
+  color: #506982;
+  text-align: right;
+  user-select: none;
+}
+.psCodeLineText {
+  flex: 1 1 auto;
+  color: #e2e8f0;
+  white-space: pre;
+}
+.psSwiftKeyword { color: #ff80bf; }
+.psSwiftType { color: #78dcff; }
+.psSwiftNumber { color: #ffd06e; }
+.psSwiftString { color: #ff8170; }
+.psSwiftComment { color: #6b7b8c; }
+.psCaption { margin-top: 12px; color: rgba(213, 220, 232, 0.78); font-size: 0.92rem; line-height: 1.55; overflow-wrap: anywhere; }
+.psVideoFigure { margin: 28px 0; }
+.psVideo { display: block; width: 100%; height: auto; max-height: 76vh; aspect-ratio: 16 / 9; object-fit: contain; border: 1px solid rgba(0, 207, 255, 0.28); border-radius: 16px; background: #000000; }
+
+.psFigure {
+  min-width: 0;
+  width: 100%;
+  margin: 28px 0;
+  padding: 14px;
+  border: 1px solid rgba(0, 207, 255, 0.2);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+  scroll-margin-top: 150px;
+}
+
+.psImageButton {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: #ffffff;
+  cursor: zoom-in;
+}
+
+.psImageButton::after {
+  content: "Click to enlarge";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border: 1px solid rgba(0, 207, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(2, 6, 13, 0.78);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.psImageButton:hover::after,
+.psImageButton:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.psImageButton:focus-visible {
+  outline: 2px solid #00cfff;
+  outline-offset: 4px;
+}
+
+.psFigureImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  background: #ffffff;
+  object-fit: contain;
+}
+
+.psFigure figcaption {
+  margin-top: 12px;
+  color: rgba(213, 220, 232, 0.78);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.psLightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.psLightboxPanel {
+  position: relative;
+  display: flex;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 48px);
+  align-items: center;
+  justify-content: center;
+}
+
+.psLightboxTitle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.psLightboxClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  padding: 9px 13px;
+  border: 1px solid rgba(0, 207, 255, 0.36);
+  border-radius: 999px;
+  background: rgba(2, 6, 13, 0.88);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.psLightboxClose:focus-visible {
+  outline: 2px solid #00cfff;
+  outline-offset: 3px;
+}
+
+.psLightboxImage {
+  display: block;
+  width: auto;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 48px);
+  border: 1px solid rgba(0, 207, 255, 0.24);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.62);
+  object-fit: contain;
+}
+.psTableWrap { width: 100%; margin-top: 18px; overflow-x: auto; border: 1px solid rgba(0, 207, 255, 0.22); border-radius: 12px; background: rgba(255, 255, 255, 0.045); }
+.psTable { width: 100%; min-width: 530px; border-collapse: collapse; font-size: 0.98rem; line-height: 1.5; }
+.psTable th, .psTable td { padding: 14px 16px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.08); vertical-align: top; }
+.psTable th { color: #00cfff; font-weight: 800; }
+.psTable td { color: #d5dce8; }
+.psTable tbody tr:last-child th, .psTable tbody tr:last-child td { border-bottom: 0; }
+
+@media (max-width: 980px) {
+  .psHero { padding: 64px 32px 44px; }
+  .psArticle { width: min(100% - 64px, 1120px); }
+}
+
+@media (max-width: 640px) {
+  .psHero { padding: 56px 22px 34px; }
+  .psArticle { width: min(100% - 44px, 1120px); padding: 42px 0 68px; }
+  .psSection { padding: 34px 0; }
+  .psSubtitle, .psSection p, .psSection li, .psMeta { font-size: 1rem; }
+  .psEditor { padding: 14px 14px 16px; }
+  .psEditorBody { font-size: 0.92rem; }
+  .psActions { align-items: stretch; }
+  .psFigure { padding: 10px; border-radius: 16px; }
+  .psFigureImage { border-radius: 10px; }
+  .psImageButton { border-radius: 10px; }
+  .psImageButton::after {
+    right: 8px;
+    bottom: 8px;
+    font-size: 0.72rem;
+  }
+  .psLightbox { padding: 14px; }
+  .psLightboxPanel,
+  .psLightboxImage {
+    max-width: calc(100vw - 28px);
+    max-height: calc(100vh - 28px);
+  }
+}

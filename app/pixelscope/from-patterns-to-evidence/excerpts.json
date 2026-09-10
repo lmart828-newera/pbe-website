@@ -1,0 +1,114 @@
+{
+  "sequence": {
+    "file": "PixelScope/Camera/ScanCameraModel+Measurement.swift",
+    "start": 50,
+    "end": 56,
+    "title": "The five-pattern measurement sequence",
+    "code": "            let sequence: [(ScanAnalysisPattern, ScanPhase, ScanPhase)] = [\n                (.white, .whiteStabilizing, .capturingWhite),\n                (.black, .blackSettling, .capturingBlack),\n                (.red, .redSettling, .capturingRed),\n                (.green, .greenSettling, .capturingGreen),\n                (.blue, .blueSettling, .capturingBlue)\n            ]",
+    "sourceSha256": "e3e6591b3dac7d4587ba09929320be4f8481a46dc6b6467157ab1e16f312e6b6"
+  },
+  "locks": {
+    "file": "PixelScope/Camera/CameraMeasurementController.swift",
+    "start": 19,
+    "end": 34,
+    "title": "Focus, exposure, and white-balance locks after White stabilization",
+    "code": "        if device.isFocusModeSupported(.locked) {\n            device.focusMode = .locked\n        }\n\n        let duration = device.exposureDuration\n        let iso = min(max(device.iso, device.activeFormat.minISO), device.activeFormat.maxISO)\n        if device.isExposureModeSupported(.custom) {\n            device.setExposureModeCustom(duration: duration, iso: iso, completionHandler: nil)\n        } else if device.isExposureModeSupported(.locked) {\n            device.exposureMode = .locked\n        }\n\n        let gains = clampedWhiteBalanceGains(device.deviceWhiteBalanceGains, on: device)\n        if device.isWhiteBalanceModeSupported(.locked) {\n            device.setWhiteBalanceModeLocked(with: gains, completionHandler: nil)\n        }",
+    "sourceSha256": "ecafd0d9b5ac057afaf4c2203bc3bd8ba01fa31c5683788bab424e62cb98e053"
+  },
+  "dwell": {
+    "file": "PixelScope/Camera/ScanCameraModel+Measurement.swift",
+    "start": 243,
+    "end": 257,
+    "title": "Each multiplex phase collects frames until its dwell expires",
+    "code": "            let duration = phase.duration(in: timing)\n            let started = Date()\n            while Date().timeIntervalSince(started) < duration {\n                try Task.checkCancellation()\n                guard isGuideReady else { throw ScanWorkflowError.trackingLost }\n                publishMeasurementContext(acquisition, phase: phase, pattern: pattern)\n                let elapsed = Date().timeIntervalSince(sequenceStarted)\n                patternCaptureProgressText = String(\n                    format: \"%@ %.1fs / %.1fs\",\n                    pattern.displayTitle,\n                    min(elapsed, total),\n                    total\n                )\n                try await Task.sleep(for: .milliseconds(50))\n            }",
+    "sourceSha256": "e3e6591b3dac7d4587ba09929320be4f8481a46dc6b6467157ab1e16f312e6b6"
+  },
+  "timing": {
+    "file": "PixelScope/ScanWorkflow/ScanWorkflow.swift",
+    "start": 175,
+    "end": 177,
+    "title": "Configured multiplex phase windows in the reviewed source",
+    "code": "    var blackPhaseB0: TimeInterval = 0.20\n    var blackPhaseCorner: TimeInterval = 0.40\n    var blackPhaseB5: TimeInterval = 0.20",
+    "sourceSha256": "4e34e406663472f414c0ec8a57afb146b69e3de4f24c02d15471f151aa510d1f"
+  },
+  "phases": {
+    "file": "PixelScope/Tracking/MultiplexedPatternAcquisition.swift",
+    "start": 80,
+    "end": 86,
+    "title": "The six corner-visibility phases",
+    "code": "enum MultiplexTrackingPhase: String, Codable, CaseIterable {\n    case p0AllOn\n    case p1TopLeftOff\n    case p2TopRightOff\n    case p3BottomRightOff\n    case p4BottomLeftOff\n    case p5AllOff",
+    "sourceSha256": "8c28ebec36d7c4ba9bd1abb96105d9ea1ba3b9713c710d9216db2d105d3d9341"
+  },
+  "mask": {
+    "file": "PixelScope/Tracking/MultiplexedPatternAcquisition.swift",
+    "start": 221,
+    "end": 224,
+    "title": "The photometric mask covers the cross and its companion L",
+    "code": "        let safety = extraMargin + detectorUncertainty\n        let pair = CornerFiducialGeometry.pairFootprint(for: corner, tuning: tuning)\n            .insetBy(dx: -safety, dy: -safety)\n        return legacy.union(pair)",
+    "sourceSha256": "8c28ebec36d7c4ba9bd1abb96105d9ea1ba3b9713c710d9216db2d105d3d9341"
+  },
+  "trackingSources": {
+    "file": "PixelScope/Tracking/MultiplexedPatternAcquisition.swift",
+    "start": 14,
+    "end": 18,
+    "title": "How the trusted display quad was obtained",
+    "code": "enum FiducialTrackingSource: String, Codable, CaseIterable {\n    case visibleCrosses\n    case estimatedCorner\n    case heldHiddenCorner\n    case inheritedQuad",
+    "sourceSha256": "8c28ebec36d7c4ba9bd1abb96105d9ea1ba3b9713c710d9216db2d105d3d9341"
+  },
+  "cornerStates": {
+    "file": "PixelScope/Tracking/CornerFiducialTracking.swift",
+    "start": 189,
+    "end": 200,
+    "title": "Per-corner tracking states retained with the geometry",
+    "code": "enum FiducialCornerState: String, Equatable, Sendable {\n    case visible\n    case partial\n    case estimated\n    case inherited\n    case intentionallyHidden\n    case intentionallyHiddenHeld\n    case temporarilyLost\n    case propagated\n    case reacquiring\n    case requiredMissing\n}",
+    "sourceSha256": "088a41dda1aac543284e4a120962866a7489d756bd4c1724b691a4b891694bfc"
+  },
+  "black": {
+    "file": "PixelScope/Tracking/MultiplexedPatternAcquisition.swift",
+    "start": 111,
+    "end": 127,
+    "title": "Live tracking, inherited geometry, and Black report keys",
+    "code": "    var contributesToMeasurement: Bool { true }\n    var usesLiveCrossTracking: Bool { self != .p5AllOff }\n    var inheritsTrustedQuad: Bool { self == .p5AllOff }\n\n    func reportKey(for pattern: ScanAnalysisPattern) -> String {\n        if pattern == .black {\n            return blackPhase.reportKey\n        }\n        switch self {\n        case .p0AllOn: return \"P0\"\n        case .p1TopLeftOff: return \"P1\"\n        case .p2TopRightOff: return \"P2\"\n        case .p3BottomRightOff: return \"P3\"\n        case .p4BottomLeftOff: return \"P4\"\n        case .p5AllOff: return \"P5\"\n        }\n    }",
+    "sourceSha256": "8c28ebec36d7c4ba9bd1abb96105d9ea1ba3b9713c710d9216db2d105d3d9341"
+  },
+  "analyze": {
+    "file": "PixelScope/Analysis/AnalysisEngine.swift",
+    "start": 43,
+    "end": 48,
+    "title": "Master images are measured after the five-pattern sequence completes",
+    "code": "    static func analyze(store: TemporaryScanStore, metadata: ScanMetadata) throws -> AnalysisResults {\n        var white = try? statistics(at: store.url(for: .white), field: .bright, quality: quality(.white, in: metadata))\n        var black = try? statistics(at: store.url(for: .black), field: .black, quality: quality(.black, in: metadata))\n        var red = try? statistics(at: store.url(for: .red), field: .bright, quality: quality(.red, in: metadata))\n        var green = try? statistics(at: store.url(for: .green), field: .bright, quality: quality(.green, in: metadata))\n        var blue = try? statistics(at: store.url(for: .blue), field: .bright, quality: quality(.blue, in: metadata))",
+    "sourceSha256": "2bcf010dadbc20bcc8515d9d3241537ab9492f3ebc364e104aa61ff75adc18c8"
+  },
+  "analysis": {
+    "file": "PixelScope/Analysis/AnalysisEngine.swift",
+    "start": 381,
+    "end": 386,
+    "title": "Black anomaly counts are withheld when acquisition quality is insufficient",
+    "code": "        if blackRecord?.acquisitionQuality != .high {\n            black?.leakageSampleCount = 0\n            black?.clusterCount = 0\n            black?.abnormalRowCount = 0\n            black?.abnormalColumnCount = 0\n        }",
+    "sourceSha256": "2bcf010dadbc20bcc8515d9d3241537ab9492f3ebc364e104aa61ff75adc18c8"
+  },
+  "report": {
+    "file": "PixelScope/Reports/ReportModel.swift",
+    "start": 115,
+    "end": 121,
+    "title": "Measured evidence remains separate from unavailable reference data",
+    "code": "    static func current(hasMeasuredFacts: Bool) -> ReportEvidenceSources {\n        ReportEvidenceSources(\n            measuredFactsAvailable: hasMeasuredFacts,\n            verifiedManufacturerReferenceAvailable: false,\n            aggregatedPixelScopeReferenceAvailable: false\n        )\n    }",
+    "sourceSha256": "b7e6b60d16185afa6334338acedac4e4ee162e91334e21b866dc752e621d222c"
+  },
+  "reportPhases": {
+    "file": "PixelScope/ScanWorkflow/ScanWorkflow.swift",
+    "start": 278,
+    "end": 286,
+    "title": "Report generation reserves a later interpretation stage",
+    "code": "enum ReportProcessingPhase: Int, CaseIterable {\n    case preparingCaptures\n    case imagePreprocessing\n    case displayAnalysis\n    case aiInterpretation\n    case buildingReportModel\n    case renderingReport\n    case savingReport\n    case finalizing",
+    "sourceSha256": "4e34e406663472f414c0ec8a57afb146b69e3de4f24c02d15471f151aa510d1f"
+  },
+  "pdf": {
+    "file": "PixelScope/Reports/PDFReportRenderer.swift",
+    "start": 17,
+    "end": 30,
+    "title": "One report model feeds the PDF renderer",
+    "code": "    static func render(_ report: ReportModel) throws -> Data {\n        let presentation = ReportPresentation(report)\n        let renderer = UIGraphicsPDFRenderer(bounds: pageRect)\n        let data = renderer.pdfData { context in\n            let layout = Layout(context: context)\n            drawPage1(report, presentation, layout)\n            drawPage2(presentation, layout)\n            layout.beginPage(appendix: true)\n            drawAppendix(presentation, layout)\n            layout.drawFooter()\n        }\n        guard !data.isEmpty else { throw ScanWorkflowError.persistenceFailed }\n        return data\n    }",
+    "sourceSha256": "1bf2013b7cd5dd164c1a8a7bbb091e3b74554fa69e434bf4bb6bf27b567296b2"
+  }
+}

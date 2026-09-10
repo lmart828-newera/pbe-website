@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import styles from "./NavLinks.module.css";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -28,6 +29,17 @@ const navItems = [
         label: "Standards & Mathematics Engineering Note",
       },
       { href: "/gen-b/wireless-output", label: "Wireless Output" },
+    ],
+  },
+  {
+    href: "/pixelscope",
+    label: "PixelScope",
+    children: [
+      { href: "/pixelscope", label: "PixelScope Overview & Support" },
+      {
+        href: "/pixelscope/from-patterns-to-evidence",
+        label: "PixelScope Engineering Note",
+      },
     ],
   },
   { href: "/support", label: "Support" },
@@ -71,7 +83,7 @@ export default function NavLinks() {
 
       <nav
         id="primary-navigation"
-        className={`nav-links${isOpen ? " nav-links-open" : ""}`}
+        className={`${styles.links} nav-links${isOpen ? " nav-links-open" : ""}`}
       >
         {navItems.map((item) => {
           const isActive = isActivePath(pathname, item.href);
