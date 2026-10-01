@@ -237,7 +237,25 @@ export default function GenBPage() {
           <h2>Technical notes from the GEN-B engineering workflow.</h2>
         </div>
 
-        <div className="genb-showcase-grid">
+        <div className="genb-showcase-grid genb-notes-grid">
+          <article className="genb-showcase-card">
+            <span className="genb-showcase-rule" />
+            <h3>
+              Beyond Mirroring: GEN-B Is Building a Controlled BT.709 Output
+              Pipeline
+            </h3>
+            <p>
+              How PBE is engineering a BT.709-targeted external output
+              architecture around Metal, Apple color management, USB-C
+              DisplayPort, and physical verification.
+            </p>
+            <Link
+              href="/gen-b/bt709-output-pipeline"
+              className="btn-secondary"
+            >
+              Read Engineering Preview
+            </Link>
+          </article>
           <article className="genb-showcase-card">
             <span className="genb-showcase-rule" />
             <h3>

@@ -1003,6 +1003,24 @@ a {
   gap: 22px;
 }
 
+.genb-notes-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.genb-notes-grid .genb-showcase-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.genb-notes-grid .genb-showcase-card p {
+  margin-bottom: 22px;
+}
+
+.genb-notes-grid .genb-showcase-card .btn-secondary {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
 .genb-showcase-card {
   min-height: 250px;
   padding: 30px;
