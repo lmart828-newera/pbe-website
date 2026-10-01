@@ -184,15 +184,32 @@ export default function Bt709OutputPipelinePage() {
           </p>
           <p>GEN-B was created to challenge that assumption.</p>
           <p>
-            The first generation demonstrated that professional test patterns,
-            algorithmic signal generation, controlled code values, audio
-            references, and broadcast-oriented workflows can live inside a
-            modern iPhone application without reducing the engineering problem
-            to a collection of pictures and prerecorded files.
+            The first generation demonstrated that a modern iPhone can generate
+            professional test patterns, controlled digital code values, and
+            algorithmic audio references while also supporting high-quality
+            12-bit 4:4:4 Apple ProRes 4444 XQ reference media inside a
+            field-ready engineering platform.
           </p>
-          <p>Now we are working on the next problem.</p>
-          <p>Not how the pattern is generated.</p>
-          <p>How the pattern leaves the phone.</p>
+          <p>Now we are taking GEN-B to the next level.</p>
+          <p>
+            We already know exactly how our reference signals are generated.
+            GEN-B is built around mathematically defined test patterns,
+            controlled digital code values, algorithmic signal generation, and
+            12-bit 4:4:4 Apple ProRes 4444 XQ reference media.
+          </p>
+          <p>
+            The next step is the output architecture. GEN-B is now moving
+            toward a deliberately controlled BT.709-targeted SDR pipeline using
+            explicit color-space definition, Metal/MetalKit rendering, Core
+            Animation compositing, and the iPhone’s native USB-C DisplayPort
+            path — followed by independent measurement of the physical output
+            signal.
+          </p>
+          <p>
+            The generation side is already under control. The engineering work
+            now moves downstream — into color-managed rendering, transport, and
+            physical verification.
+          </p>
         </section>
 
         <section className={styles.section}>
