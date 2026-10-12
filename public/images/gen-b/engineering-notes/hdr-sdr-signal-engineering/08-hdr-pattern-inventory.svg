@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#07111f"/>
+  <rect x="1.5" y="1.5" width="1597" height="897" fill="none" stroke="#00cfff" stroke-opacity="0.28" stroke-width="2"/>
+  <rect x="48" y="32" width="42" height="3" rx="1.5" fill="#00cfff"/>
+  <text x="48" y="66" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="2.2">GEN-B · FIGURE 08</text>
+  <text x="48" y="108" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="32" font-weight="800">Twelve mathematical HDR patterns</text>
+  <text x="48" y="146" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18">All twelve are 1920×1080 procedural rasters. Only the first three are BT.2111 color-bar figures.</text>
+
+  <rect x="48" y="180" width="500" height="660" rx="18" fill="#0c1a2c" stroke="#00cfff" stroke-opacity="0.45"/>
+  <text x="76" y="228" fill="#00cfff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="800" letter-spacing="1.2">BT.2111-3 COLOR BARS</text>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" fill="#d5dce8" font-size="20">
+    <text x="76" y="290" fill="#ffffff" font-weight="800">PQ Full</text>
+    <text x="76" y="324">Table 4 codes. Ramp Table 6.</text>
+    <text x="76" y="358">Layer: BT.2100 PQ.</text>
+    <text x="76" y="430" fill="#ffffff" font-weight="800">PQ Narrow</text>
+    <text x="76" y="464">Table 3 codes. Ramp Table 5.</text>
+    <text x="76" y="498">Layer: BT.2100 PQ.</text>
+    <text x="76" y="570" fill="#ffffff" font-weight="800">HLG Narrow</text>
+    <text x="76" y="604">Table 2 codes. 75% comparison.</text>
+    <text x="76" y="638">Ramp Table 5. Layer: BT.2100 HLG.</text>
+    <text x="76" y="740" fill="#9aabc0" font-size="18">HLG Full is not implemented.</text>
+    <text x="76" y="776" fill="#9aabc0" font-size="18">The engine does not convert one</text>
+    <text x="76" y="808" fill="#9aabc0" font-size="18">code table into another.</text>
+  </g>
+
+  <rect x="576" y="180" width="976" height="660" rx="18" fill="#0c1a2c" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="604" y="228" fill="#00cfff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="800" letter-spacing="1.2">GEN-B PQ NARROW DIAGNOSTICS</text>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" fill="#d5dce8">
+    <text x="604" y="290" fill="#ffffff" font-weight="700">11-step grayscale</text>
+    <text x="980" y="290">Table 3 steps 0%-100%</text>
+    <text x="604" y="346" fill="#ffffff" font-weight="700">Gray ramp</text>
+    <text x="980" y="346">Code 64 to code 940</text>
+    <text x="604" y="402" fill="#ffffff" font-weight="700">Multi-window</text>
+    <text x="980" y="402">Codes 64 and 723</text>
+    <text x="604" y="458" fill="#ffffff" font-weight="700">HDR clipping</text>
+    <text x="980" y="458">Neutral and red halves</text>
+    <text x="604" y="514" fill="#ffffff" font-weight="700">Color tracking</text>
+    <text x="980" y="514">7×7, E' = k/8</text>
+    <text x="604" y="570" fill="#ffffff" font-weight="700">Near black</text>
+    <text x="980" y="570">18 codes around 64</text>
+    <text x="604" y="626" fill="#ffffff" font-weight="700">Highlight roll-off</text>
+    <text x="980" y="626">Ramp 509 to 940</text>
+    <text x="604" y="682" fill="#ffffff" font-weight="700">Color volume</text>
+    <text x="980" y="682">Inverse EOTF, then narrow D</text>
+    <text x="604" y="738" fill="#ffffff" font-weight="700">Saturation sweep</text>
+    <text x="980" y="738">723 toward inactive 64</text>
+    <text x="604" y="800" fill="#9aabc0" font-size="18">These nine use the HDR PQ layer. They are not additional BT.2111 color-bar figures.</text>
+  </g>
+</svg>

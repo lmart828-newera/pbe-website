@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#07111f"/>
+  <rect x="1.5" y="1.5" width="1597" height="897" fill="none" stroke="#00cfff" stroke-opacity="0.28" stroke-width="2"/>
+  <rect x="48" y="36" width="42" height="3" rx="1.5" fill="#00cfff"/>
+  <text x="48" y="72" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="2.2">GEN-B · FIGURE 01</text>
+  <text x="48" y="116" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="34" font-weight="800">Mathematical signal architecture</text>
+  <text x="48" y="156" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18">Native reference generation, Metal presentation, and separate SDR and HDR rendering policies.</text>
+
+  <rect x="48" y="180" width="1504" height="68" rx="16" fill="#0c1a2c" stroke="#00cfff" stroke-opacity="0.35"/>
+  <text x="80" y="221" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="700">Reference pattern</text>
+  <text x="310" y="221" fill="#00cfff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28">→</text>
+  <text x="360" y="221" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="700">Mathematical pattern engine</text>
+  <text x="760" y="221" fill="#00cfff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28">→</text>
+  <text x="810" y="221" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="700">Metal presentation</text>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <rect x="48" y="272" width="744" height="292" rx="18" fill="#0c1a2c" stroke="#00cfff" stroke-opacity="0.55"/>
+    <text x="76" y="314" fill="#00cfff" font-size="16" font-weight="800" letter-spacing="1.4">MATHEMATICAL SDR</text>
+    <text x="76" y="354" fill="#ffffff" font-size="26" font-weight="800">BT.709 / 10-bit</text>
+    <text x="76" y="398" fill="#d5dce8" font-size="18">SDRTenBitPatternEngine</text>
+    <text x="76" y="430" fill="#d5dce8" font-size="18">Procedural 1920×1080 R′G′B′ raster</text>
+    <text x="76" y="462" fill="#d5dce8" font-size="18">bgr10a2Unorm texture and drawable</text>
+    <text x="76" y="494" fill="#d5dce8" font-size="18">BT.709 · EDR off · nearest sampling</text>
+    <text x="76" y="532" fill="#ffffff" font-size="17" font-weight="700">GreyScale, Luma, RP 219, EBU bars, color fields, and ramps</text>
+
+    <rect x="808" y="272" width="744" height="292" rx="18" fill="#0c1a2c" stroke="#00cfff" stroke-opacity="0.55"/>
+    <text x="836" y="314" fill="#00cfff" font-size="16" font-weight="800" letter-spacing="1.4">MATHEMATICAL HDR</text>
+    <text x="836" y="354" fill="#ffffff" font-size="26" font-weight="800">BT.2100 PQ and HLG</text>
+    <text x="836" y="398" fill="#d5dce8" font-size="18">Twelve procedural reference patterns</text>
+    <text x="836" y="430" fill="#d5dce8" font-size="18">bgr10a2Unorm · alpha 3 · nearest sampling</text>
+    <text x="836" y="462" fill="#d5dce8" font-size="18">PQ policy: BT.2100 PQ · EDR on</text>
+    <text x="836" y="494" fill="#d5dce8" font-size="18">HLG policy: BT.2100 HLG · EDR on</text>
+    <text x="836" y="532" fill="#ffffff" font-size="18" font-weight="700">PQ Full, PQ Narrow, HLG Narrow. No HLG Full.</text>
+
+    <rect x="48" y="584" width="1504" height="268" rx="18" fill="#0c1a2c" stroke="#00cfff" stroke-opacity="0.7" stroke-dasharray="8 6"/>
+    <text x="76" y="628" fill="#00cfff" font-size="16" font-weight="800" letter-spacing="1.4">MATHEMATICAL VIDEO ENGINE — PLANNED</text>
+    <rect x="1268" y="606" width="132" height="30" rx="15" fill="#00cfff"/>
+    <text x="1288" y="626" fill="#07111f" font-size="14" font-weight="800" letter-spacing="1.2">PLANNED</text>
+    <text x="76" y="668" fill="#ffffff" font-size="22" font-weight="800">Architectural extension. Not an implemented feature.</text>
+
+    <text x="76" y="716" fill="#00cfff" font-size="15" font-weight="800" letter-spacing="1.1">REFERENCE DEFINITIONS</text>
+    <text x="76" y="748" fill="#d5dce8" font-size="18">Reuses the mathematical SDR</text>
+    <text x="76" y="776" fill="#d5dce8" font-size="18">and HDR pattern definitions</text>
+
+    <text x="576" y="716" fill="#00cfff" font-size="15" font-weight="800" letter-spacing="1.1">FRAME SCHEDULING</text>
+    <text x="576" y="748" fill="#d5dce8" font-size="18">Orders those definitions</text>
+    <text x="576" y="776" fill="#d5dce8" font-size="18">across time</text>
+
+    <text x="1040" y="716" fill="#00cfff" font-size="15" font-weight="800" letter-spacing="1.1">TEMPORAL GENERATION</text>
+    <text x="1040" y="748" fill="#d5dce8" font-size="18">Builds the reference signal</text>
+    <text x="1040" y="776" fill="#d5dce8" font-size="18">as a sequence of frames</text>
+
+    <text x="76" y="820" fill="#ffffff" font-size="18" font-weight="700">Extends the still-image architecture. It does not replace the implemented SDR and HDR paths.</text>
+  </g>
+</svg>

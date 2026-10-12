@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#07111f"/>
+  <rect x="1.5" y="1.5" width="1597" height="897" fill="none" stroke="#00cfff" stroke-opacity="0.28" stroke-width="2"/>
+  <rect x="48" y="36" width="42" height="3" rx="1.5" fill="#00cfff"/>
+  <text x="48" y="70" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="2.2">GEN-B · FIGURE 05</text>
+  <text x="48" y="108" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="32" font-weight="800">BT.2111-3 Table 1 geometry, 1920×1080</text>
+  <text x="48" y="140" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">Drawn at 0.36 scale. Fills identify regions. Stored 10-bit codes are in the article tables, not in these swatches.</text>
+
+  <!-- raster at 0.36: origin 56,168 size 691.2 x 388.8 -->
+  <g transform="translate(112 168) scale(0.36)">
+    <rect x="0" y="0" width="1920" height="1080" fill="#081018"/>
+    <rect x="0" y="0" width="240" height="630" fill="#6d7684"/>
+    <rect x="1680" y="0" width="240" height="630" fill="#6d7684"/>
+    <rect x="240" y="0" width="206" height="90" fill="#ffffff"/>
+    <rect x="446" y="0" width="206" height="90" fill="#ffff00"/>
+    <rect x="652" y="0" width="206" height="90" fill="#00ffff"/>
+    <rect x="858" y="0" width="204" height="90" fill="#00ff00"/>
+    <rect x="1062" y="0" width="206" height="90" fill="#ff00ff"/>
+    <rect x="1268" y="0" width="206" height="90" fill="#ff0000"/>
+    <rect x="1474" y="0" width="206" height="90" fill="#0000ff"/>
+    <rect x="240" y="90" width="206" height="540" fill="#bfbfbf"/>
+    <rect x="446" y="90" width="206" height="540" fill="#bfbf00"/>
+    <rect x="652" y="90" width="206" height="540" fill="#00bfbf"/>
+    <rect x="858" y="90" width="204" height="540" fill="#00bf00"/>
+    <rect x="1062" y="90" width="206" height="540" fill="#bf00bf"/>
+    <rect x="1268" y="90" width="206" height="540" fill="#bf0000"/>
+    <rect x="1474" y="90" width="206" height="540" fill="#0000bf"/>
+    <rect x="240" y="630" width="1440" height="90" fill="#1c3048"/>
+    <rect x="240" y="720" width="1440" height="90" fill="#102033"/>
+    <rect x="0" y="810" width="1920" height="270" fill="#0b1826"/>
+    <rect x="0" y="0" width="1920" height="1080" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <line x1="858" y1="0" x2="858" y2="810" stroke="#00cfff" stroke-width="4"/>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <text x="560" y="416">Steps</text>
+    <text x="560" y="448">Ramp</text>
+    <text x="560" y="512">Bottom</text>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" fill="#d5dce8">
+    <text x="8" y="188">90</text>
+    <text x="8" y="300">540</text>
+    <text x="8" y="416">90</text>
+    <text x="8" y="448">90</text>
+    <text x="8" y="512">270</text>
+    <text x="56" y="590">Bars x = 240-1679. Green starts at x = 858 and is 204 wide.</text>
+    <text x="56" y="616">Side columns x = 0-239 and 1680-1919 are 40% gray beside the upper bands.</text>
+    <text x="56" y="642">Steps occupy y = 630-719. Ramp occupies y = 720-809. Bottom occupies y = 810-1079.</text>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <rect x="820" y="168" width="732" height="560" rx="16" fill="#0c1a2c" stroke="#00cfff" stroke-opacity="0.28"/>
+    <text x="848" y="212" fill="#ffffff" font-size="22" font-weight="800">Table 1 integers</text>
+    <text x="848" y="258" fill="#d5dce8" font-size="18">a = 1920    b = 1080    c = 240</text>
+    <text x="848" y="294" fill="#d5dce8" font-size="18">d = 206    e = 204</text>
+    <text x="848" y="330" fill="#d5dce8" font-size="18">Bar widths: 206, 206, 206, 204, 206, 206, 206</text>
+    <text x="848" y="366" fill="#d5dce8" font-size="18">Bands: b/12, b/2, b/12, b/12, b/4</text>
+    <text x="848" y="402" fill="#d5dce8" font-size="18">= 90 + 540 + 90 + 90 + 270 = 1080</text>
+    <text x="848" y="456" fill="#00cfff" font-size="16" font-weight="800">COMPARISON BAND</text>
+    <text x="848" y="490" fill="#d5dce8" font-size="18">PQ Full and PQ Narrow: 58%</text>
+    <text x="848" y="522" fill="#d5dce8" font-size="18">HLG Narrow: 75%</text>
+    <text x="848" y="576" fill="#00cfff" font-size="16" font-weight="800">RAMPS, WIDTH 1680</text>
+    <text x="848" y="610" fill="#d5dce8" font-size="18">PQ Full: 618 + 1022 + 40</text>
+    <text x="848" y="642" fill="#d5dce8" font-size="18">codes 0, then 1-1022, then 1023</text>
+    <text x="848" y="678" fill="#d5dce8" font-size="18">PQ Narrow and HLG: 559 + 1014 + 107</text>
+    <text x="848" y="710" fill="#d5dce8" font-size="18">codes 4, then 5-1018, then 1019</text>
+  </g>
+  <text x="56" y="850" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">The cyan line is the left edge of green, where the PQ Narrow and HLG 0% ramp code 64 is placed. Each variant supplies its own code table.</text>
+</svg>

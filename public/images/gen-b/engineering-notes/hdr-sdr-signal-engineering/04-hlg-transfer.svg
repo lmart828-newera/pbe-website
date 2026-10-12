@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#07111f"/>
+  <rect x="1.5" y="1.5" width="1597" height="897" fill="none" stroke="#00cfff" stroke-opacity="0.28" stroke-width="2"/>
+  <rect x="48" y="36" width="42" height="3" rx="1.5" fill="#00cfff"/>
+  <text x="48" y="72" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="2.2">GEN-B · FIGURE 04</text>
+  <text x="48" y="116" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="34" font-weight="800">HLG opto-electronic transfer function</text>
+  <text x="48" y="156" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18">ITU-R BT.2100 scene-light OETF. E is normalized scene linear light. E&#8242; is the nonlinear signal.</text>
+
+  <rect x="48" y="196" width="736" height="250" rx="16" fill="#0c1a2c" stroke="#00cfff" stroke-opacity="0.4"/>
+  <text x="76" y="244" fill="#00cfff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="800">0 &#8804; E &#8804; 1/12</text>
+  <text x="76" y="320" fill="#ffffff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="32">E&#8242; = &#8730;(3E)</text>
+
+  <rect x="816" y="196" width="736" height="250" rx="16" fill="#0c1a2c" stroke="#00cfff" stroke-opacity="0.4"/>
+  <text x="844" y="244" fill="#00cfff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="800">1/12 &lt; E &#8804; 1</text>
+  <text x="844" y="320" fill="#ffffff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">E&#8242; = a&#183;ln(12E &#8722; b) + c</text>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" fill="#d5dce8">
+    <text x="76" y="520">a = 0.17883277</text>
+    <text x="560" y="520">b = 1 &#8722; 4a</text>
+    <text x="980" y="520">c = 0.5 &#8722; a&#183;ln(4a)</text>
+    <text x="76" y="590" fill="#ffffff" font-weight="700">HLG is relative. Display luminance also depends on the system and the display.</text>
+    <text x="76" y="650">GEN-B HLG Narrow does not evaluate this OETF.</text>
+    <text x="76" y="698">It stores the BT.2111-3 Table 2 10-bit codes and tags the layer BT.2100 HLG.</text>
+    <text x="76" y="746">The 75% comparison uses code 721 on an active channel and code 64 on an inactive channel.</text>
+    <text x="76" y="820" fill="#9aabc0" font-size="18">A shared integer with PQ Narrow, such as nominal white 940, is not a PQ luminance. The color-space tag selects the interpretation.</text>
+  </g>
+</svg>

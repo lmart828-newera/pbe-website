@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#07111f"/>
+  <rect x="1.5" y="1.5" width="1597" height="897" fill="none" stroke="#00cfff" stroke-opacity="0.28" stroke-width="2"/>
+  <rect x="48" y="36" width="42" height="3" rx="1.5" fill="#00cfff"/>
+  <text x="48" y="72" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="2.2">GEN-B · FIGURE 02</text>
+  <text x="48" y="118" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="34" font-weight="800">bgr10a2Unorm word, little-endian bit fields</text>
+  <text x="48" y="160" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18">Bit 31 is drawn at the left. Components are 10-bit codes 0-1023. Opaque alpha is 3.</text>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" font-weight="700">
+    <rect x="48" y="230" width="94" height="28" rx="6" fill="#a8b2c0"/>
+    <text x="58" y="250" fill="#041018" font-size="15">A 31-30</text>
+    <rect x="142" y="230" width="470" height="28" rx="6" fill="#ff0000"/>
+    <text x="310" y="250" fill="#041018">Red bits 29-20</text>
+    <rect x="612" y="230" width="470" height="28" rx="6" fill="#00ff00"/>
+    <text x="770" y="250" fill="#041018">Green bits 19-10</text>
+    <rect x="1082" y="230" width="470" height="28" rx="6" fill="#0000ff"/>
+    <text x="1250" y="250" fill="#ffffff">Blue bits 9-0</text>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700">
+    <rect x="48" y="290" width="94" height="110" fill="#a8b2c0"/>
+    <text x="70" y="352" fill="#041018">A</text>
+    <rect x="142" y="290" width="470" height="110" fill="#ff0000"/>
+    <text x="360" y="352" fill="#041018">R' 10 bits</text>
+    <rect x="612" y="290" width="470" height="110" fill="#00ff00"/>
+    <text x="810" y="352" fill="#041018">G' 10 bits</text>
+    <rect x="1082" y="290" width="470" height="110" fill="#0000ff"/>
+    <text x="1280" y="352" fill="#ffffff">B' 10 bits</text>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" fill="#9aabc0">
+    <text x="48" y="440">bit 31</text>
+    <text x="142" y="440">bit 29</text>
+    <text x="548" y="440">bit 20</text>
+    <text x="612" y="440">bit 19</text>
+    <text x="1018" y="440">bit 10</text>
+    <text x="1082" y="440">bit 9</text>
+    <text x="1488" y="440">bit 0</text>
+  </g>
+
+  <text x="48" y="520" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22" font-weight="800">Packing used by mathematical SDR and HDR rasters</text>
+  <text x="48" y="572" fill="#d5dce8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22">P = B + (G &lt;&lt; 10) + (R &lt;&lt; 20) + (3 &lt;&lt; 30)</text>
+  <text x="48" y="620" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20">Each component is masked with 0x3FF. Alpha is masked with 0x3.</text>
+  <text x="48" y="668" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20">Swift stores each component in UInt16, then packs one UInt32 per pixel.</text>
+  <text x="48" y="716" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="20">1920 × 1080 pixels × 4 bytes = 8,294,400 bytes, about 7.91 MiB.</text>
+  <text x="48" y="790" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18">The texture format is MTLPixelFormat.bgr10a2Unorm. Row 0 is the top of the raster.</text>
+  <text x="48" y="828" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18">Channel colors identify bit fields. They are not the reference pixel colors.</text>
+</svg>

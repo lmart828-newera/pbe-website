@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#07111f"/>
+  <rect x="1.5" y="1.5" width="1597" height="897" fill="none" stroke="#00cfff" stroke-opacity="0.28" stroke-width="2"/>
+  <rect x="48" y="36" width="42" height="3" rx="1.5" fill="#00cfff"/>
+  <text x="48" y="72" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="2.2">GEN-B · FIGURE 03</text>
+  <text x="48" y="116" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="34" font-weight="800">PQ inverse EOTF and EOTF</text>
+  <text x="48" y="156" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18">SMPTE ST 2084 constants, written in the reduced form used by the article. Y = L / 10000.</text>
+
+  <rect x="48" y="190" width="1504" height="150" rx="16" fill="#0c1a2c" stroke="#00cfff" stroke-opacity="0.35"/>
+  <text x="72" y="232" fill="#00cfff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="800">INVERSE EOTF · luminance to normalized signal</text>
+  <text x="72" y="286" fill="#ffffff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28">V = [(c<tspan baseline-shift="sub" font-size="0.62em">1</tspan> + c<tspan baseline-shift="sub" font-size="0.62em">2</tspan>&#183;Y<tspan baseline-shift="super" font-size="0.62em">m&#8321;</tspan>) / (1 + c<tspan baseline-shift="sub" font-size="0.62em">3</tspan>&#183;Y<tspan baseline-shift="super" font-size="0.62em">m&#8321;</tspan>)]<tspan baseline-shift="super" font-size="0.62em">m&#8322;</tspan></text>
+
+  <rect x="48" y="360" width="1504" height="150" rx="16" fill="#0c1a2c" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="72" y="402" fill="#00cfff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="800">EOTF · normalized signal to luminance</text>
+  <text x="72" y="456" fill="#ffffff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26">L = 10000 &#183; [max(V<tspan baseline-shift="super" font-size="0.62em">1/m&#8322;</tspan> &#8722; c<tspan baseline-shift="sub" font-size="0.62em">1</tspan>, 0) / (c<tspan baseline-shift="sub" font-size="0.62em">2</tspan> &#8722; c<tspan baseline-shift="sub" font-size="0.62em">3</tspan>&#183;V<tspan baseline-shift="super" font-size="0.62em">1/m&#8322;</tspan>)]<tspan baseline-shift="super" font-size="0.62em">1/m&#8321;</tspan></text>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="20" fill="#d5dce8">
+    <text x="72" y="570">m1 = 2610/16384</text>
+    <text x="430" y="570">m2 = 2523/32 = (2523/4096)×128</text>
+    <text x="72" y="616">c1 = 3424/4096</text>
+    <text x="430" y="616">c2 = 2413/128 = (2413/4096)×32</text>
+    <text x="1040" y="616">c3 = 2392/128 = (2392/4096)×32</text>
+    <text x="72" y="678" fill="#ffffff" font-weight="700">Narrow 10-bit code, BT.2100 Table 9 rounding</text>
+    <text x="72" y="722">Round(x) = Sign(x) × Floor(|x| + 0.5)</text>
+    <text x="72" y="768">D = Round(64 + 876&#183;V)</text>
+    <text x="520" y="768">Nominal black D = 64</text>
+    <text x="920" y="768">Nominal white D = 940</text>
+    <text x="72" y="830" fill="#9aabc0" font-size="18">Color Volume evaluates the inverse EOTF, then this quantization. BT.2111 bars and the 11-step raster store codes and do not run ST 2084 again.</text>
+  </g>
+</svg>

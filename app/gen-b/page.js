@@ -241,6 +241,24 @@ export default function GenBPage() {
           <article className="genb-showcase-card">
             <span className="genb-showcase-rule" />
             <h3>
+              Beyond the Smartphone: Inside GEN-B&apos;s Professional HDR and
+              SDR Signal Generation Architecture
+            </h3>
+            <p>
+              How GEN-B constructs ITU-R BT.2111 reference patterns as native
+              10-bit values and keeps that HDR path separate from its BT.709
+              SDR presentation.
+            </p>
+            <Link
+              href="/gen-b/hdr-sdr-signal-engineering"
+              className="btn-secondary"
+            >
+              Read Engineering Note
+            </Link>
+          </article>
+          <article className="genb-showcase-card">
+            <span className="genb-showcase-rule" />
+            <h3>
               Beyond Mirroring: GEN-B Is Building a Controlled BT.709 Output
               Pipeline
             </h3>

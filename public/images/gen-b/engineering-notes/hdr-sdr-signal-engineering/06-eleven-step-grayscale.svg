@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img">
+  <rect width="1600" height="900" fill="#07111f"/>
+  <rect x="1.5" y="1.5" width="1597" height="897" fill="none" stroke="#00cfff" stroke-opacity="0.28" stroke-width="2"/>
+  <rect x="40" y="28" width="42" height="3" rx="1.5" fill="#00cfff"/>
+  <text x="40" y="62" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="700" letter-spacing="2.2">GEN-B · FIGURE 06</text>
+  <text x="40" y="100" fill="#ffffff" font-family="ui-sans-serif, system-ui, sans-serif" font-size="30" font-weight="800">11-step PQ Narrow: stored codes and nominal luminance</text>
+  <text x="40" y="132" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">GEN-B stores R'=G'=B'. Nit values are the nominal PQ interpretation, not pixels and not measured brightness.</text>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">
+    <text x="48" y="180" fill="#00cfff" font-weight="800">STEP</text>
+    <text x="130" y="180" fill="#00cfff" font-weight="800">E'</text>
+    <text x="230" y="180" fill="#00cfff" font-weight="800">CODE</text>
+    <text x="340" y="180" fill="#00cfff" font-weight="800">NOMINAL cd/m²</text>
+    <text x="48" y="214" fill="#d5dce8">0</text><text x="130" y="214" fill="#d5dce8">0%</text><text x="230" y="214" fill="#ffffff">64</text><text x="340" y="214" fill="#d5dce8">0</text>
+    <text x="48" y="248" fill="#d5dce8">1</text><text x="130" y="248" fill="#d5dce8">10%</text><text x="230" y="248" fill="#ffffff">152</text><text x="340" y="248" fill="#d5dce8">0.33</text>
+    <text x="48" y="282" fill="#d5dce8">2</text><text x="130" y="282" fill="#d5dce8">20%</text><text x="230" y="282" fill="#ffffff">239</text><text x="340" y="282" fill="#d5dce8">2.42</text>
+    <text x="48" y="316" fill="#d5dce8">3</text><text x="130" y="316" fill="#d5dce8">30%</text><text x="230" y="316" fill="#ffffff">327</text><text x="340" y="316" fill="#d5dce8">10.07</text>
+    <text x="48" y="350" fill="#d5dce8">4</text><text x="130" y="350" fill="#d5dce8">40%</text><text x="230" y="350" fill="#ffffff">414</text><text x="340" y="350" fill="#d5dce8">32.29</text>
+    <text x="48" y="384" fill="#d5dce8">5</text><text x="130" y="384" fill="#d5dce8">50%</text><text x="230" y="384" fill="#ffffff">502</text><text x="340" y="384" fill="#d5dce8">92.25</text>
+    <text x="48" y="418" fill="#d5dce8">6</text><text x="130" y="418" fill="#d5dce8">60%</text><text x="230" y="418" fill="#ffffff">590</text><text x="340" y="418" fill="#d5dce8">245.07</text>
+    <text x="48" y="452" fill="#d5dce8">7</text><text x="130" y="452" fill="#d5dce8">70%</text><text x="230" y="452" fill="#ffffff">677</text><text x="340" y="452" fill="#d5dce8">619.57</text>
+    <text x="48" y="486" fill="#d5dce8">8</text><text x="130" y="486" fill="#d5dce8">80%</text><text x="230" y="486" fill="#ffffff">765</text><text x="340" y="486" fill="#d5dce8">1,558.44</text>
+    <text x="48" y="520" fill="#d5dce8">9</text><text x="130" y="520" fill="#d5dce8">90%</text><text x="230" y="520" fill="#ffffff">852</text><text x="340" y="520" fill="#d5dce8">3,889.14</text>
+    <text x="48" y="554" fill="#d5dce8">10</text><text x="130" y="554" fill="#d5dce8">100%</text><text x="230" y="554" fill="#ffffff">940</text><text x="340" y="554" fill="#d5dce8">10,000</text>
+  </g>
+
+  <text x="48" y="610" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">D = Round(64 + 876·E'), E' = k/10</text>
+  <text x="48" y="642" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">Round(x) = Sign(x) × Floor(|x| + 0.5)</text>
+  <text x="48" y="682" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">40%: 876 × 0.4 = 350.4</text>
+  <text x="48" y="708" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">64 + 350.4 = 414.4; Floor(414.9) = 414</text>
+  <text x="48" y="746" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">70%: 876 × 0.7 = 613.2</text>
+  <text x="48" y="772" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">64 + 613.2 = 677.2; Floor(677.7) = 677</text>
+  <text x="48" y="810" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">Region edges use floor(i × 1920 / 11).</text>
+  <text x="48" y="842" fill="#d5dce8" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16">Sub-black 4 and super-white 1019 are absent.</text>
+  <text x="48" y="874" fill="#9aabc0" font-family="ui-sans-serif, system-ui, sans-serif" font-size="15">Code spacing stays near 87 or 88. Nominal luminance does not.</text>
+
+  <!-- log plot steps 1-10. Step 0 is 0 nits and is not on a log axis. -->
+  <g font-family="ui-sans-serif, system-ui, sans-serif">
+    <text x="860" y="180" fill="#ffffff" font-size="18" font-weight="800">log10 nominal cd/m², steps 1-10</text>
+    <line x1="860" y1="150" x2="860" y2="780" stroke="#9aabc0" stroke-width="1.5"/>
+    <line x1="860" y1="780" x2="1520" y2="780" stroke="#9aabc0" stroke-width="1.5"/>
+    <line x1="848" y1="710" x2="1520" y2="710" stroke="#ffffff" stroke-opacity="0.12"/>
+    <line x1="848" y1="570" x2="1520" y2="570" stroke="#ffffff" stroke-opacity="0.12"/>
+    <line x1="848" y1="430" x2="1520" y2="430" stroke="#ffffff" stroke-opacity="0.12"/>
+    <line x1="848" y1="290" x2="1520" y2="290" stroke="#ffffff" stroke-opacity="0.12"/>
+    <line x1="848" y1="150" x2="1520" y2="150" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="780" y="714" fill="#9aabc0" font-size="14" text-anchor="end">1</text>
+    <text x="780" y="574" fill="#9aabc0" font-size="14" text-anchor="end">10</text>
+    <text x="780" y="434" fill="#9aabc0" font-size="14" text-anchor="end">100</text>
+    <text x="780" y="294" fill="#9aabc0" font-size="14" text-anchor="end">1,000</text>
+    <text x="780" y="154" fill="#9aabc0" font-size="14" text-anchor="end">10,000</text>
+    <polyline fill="none" stroke="#00cfff" stroke-width="3" points="860,777.41 933.33,656.27 1006.67,569.58 1080,498.73 1153.33,434.9 1226.67,375.5 1300,319.11 1373.33,263.02 1446.67,207.42 1520,150"/>
+    <g fill="#ffffff">
+      <circle cx="860" cy="777.41" r="4"/>
+      <circle cx="933.33" cy="656.27" r="4"/>
+      <circle cx="1006.67" cy="569.58" r="4"/>
+      <circle cx="1080" cy="498.73" r="4"/>
+      <circle cx="1153.33" cy="434.9" r="4"/>
+      <circle cx="1226.67" cy="375.5" r="4"/>
+      <circle cx="1300" cy="319.11" r="4"/>
+      <circle cx="1373.33" cy="263.02" r="4"/>
+      <circle cx="1446.67" cy="207.42" r="4"/>
+      <circle cx="1520" cy="150" r="4"/>
+    </g>
+    <text x="860" y="820" fill="#9aabc0" font-size="14">10%</text>
+    <text x="1220" y="820" fill="#9aabc0" font-size="14">60%</text>
+    <text x="1476" y="820" fill="#9aabc0" font-size="14">100%</text>
+    <text x="860" y="860" fill="#9aabc0" font-size="14">0% is code 64 and 0 cd/m². It is omitted from the logarithm.</text>
+  </g>
+</svg>
