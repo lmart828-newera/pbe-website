@@ -16,12 +16,12 @@ const navItems = [
     children: [
       { href: "/gen-b", label: "GEN-B Overview" },
       {
-        href: "/gen-b/bt709-output-pipeline",
-        label: "BT.709 Output Engineering Preview",
-      },
-      {
         href: "/gen-b/hdr-sdr-signal-engineering",
         label: "HDR and SDR Signal Engineering",
+      },
+      {
+        href: "/gen-b/bt709-output-pipeline",
+        label: "BT.709 Output Engineering Preview",
       },
       { href: "/gen-b/sweep", label: "SWEEP Engineering Note" },
       {
